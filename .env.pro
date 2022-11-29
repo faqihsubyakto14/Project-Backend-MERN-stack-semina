@@ -1,0 +1,9 @@
+MODE=dev
+PORT=9000
+URL_MONGODB_DEV=mongodb://localhost:27017/db_semina_bootcamp
+JWT_SECRET_KEY=secret_secret
+JWT_EXPIRATION=24h
+JWT_REFRESH_TOKEN_SECRET_KEY=secrereret
+JWT_REFRESH_TOKEN_EXPIRATION=24h
+GMAIL= faqihdev14@gmail.com
+PASSWORD= rrwjrnsshlpnqjkg
