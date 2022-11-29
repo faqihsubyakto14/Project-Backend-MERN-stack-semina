@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { model, Schema } = mongoose;
 
-const ticketCategoriesSchema = new mongoose.Schema({
+const ticketCategoriesSchema = new Schema({
   type: {
     type: String,
     required: [true, 'Tipe tiket harus diisi'],
@@ -23,7 +24,7 @@ const ticketCategoriesSchema = new mongoose.Schema({
   },
 });
 
-const EventSchema = new mongoose.Schema(
+const EventSchema = new Schema(
   {
     title: {
       type: String,
@@ -82,4 +83,4 @@ const EventSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Event', EventSchema);
+module.exports = model('Events', EventSchema);

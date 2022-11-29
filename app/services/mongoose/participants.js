@@ -9,7 +9,6 @@ const {
   UnauthorizedError,
 } = require('../../errors');
 const { createTokenParticipant, createJWT } = require('../../utils');
-
 const { otpMail } = require('../mail');
 
 const signupParticipant = async (req) => {
@@ -20,7 +19,6 @@ const signupParticipant = async (req) => {
     email,
     status: 'tidak aktif',
   });
-
   if (result) {
     result.firstName = firstName;
     result.lastName = lastName;
@@ -43,7 +41,6 @@ const signupParticipant = async (req) => {
 
   delete result._doc.password;
   delete result._doc.otp;
-
   return result;
 };
 
@@ -111,8 +108,10 @@ const getOneEvent = async (req) => {
   const { id } = req.params;
   const result = await Events.findOne({ _id: id })
     .populate('category')
-    .populate({ path: 'talent', populate: 'image' })
-    .populate('image');
+    .populate('image')
+    .populate({ path: 'talent', populate: 'image' });
+
+  console.log(result);
 
   if (!result) throw new NotFoundError(`Tidak ada acara dengan id :  ${id}`);
 

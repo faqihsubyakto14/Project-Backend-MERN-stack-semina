@@ -14,8 +14,8 @@ const {
   authorizeRoles,
 } = require('../../../middlewares/auth');
 
-router.get('/events', authenticateUser, authorizeRoles('organizer'), index);
-router.get('/events/:id', authenticateUser, authorizeRoles('organizer'), find);
+router.get('/events', authenticateUser, index);
+router.get('/events/:id', authenticateUser, find);
 router.put(
   '/events/:id',
   authenticateUser,

@@ -61,7 +61,7 @@ const orderSchema = new mongoose.Schema(
     orderItems: [orderDetailSchema],
     participant: {
       type: mongoose.Types.ObjectId,
-      ref: 'Participant',
+      ref: 'Participants',
       required: true,
     },
     payment: {

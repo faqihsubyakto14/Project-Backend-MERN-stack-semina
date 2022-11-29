@@ -52,4 +52,4 @@ participantSchema.methods.comparePassword = async function (canditatePassword) {
   return isMatch;
 };
 
-module.exports = mongoose.model('Participant', participantSchema);
+module.exports = mongoose.model('Participants', participantSchema);
