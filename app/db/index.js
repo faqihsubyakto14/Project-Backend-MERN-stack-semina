@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { urlDb } = require('../config');
 
-mongoose.connect(urlDb);
+mongoose.connect(urlDb.toString());
 
 const db = mongoose.connection;
 
