@@ -29,11 +29,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.status(200).json({
-    message: 'Welcome to api semina',
-  });
-});
 
 app.use(`${v1}/cms`, categoriesRouter);
 app.use(`${v1}/cms`, imagesRouter);
@@ -45,6 +40,12 @@ app.use(`${v1}/cms`, ordersRouter);
 app.use(`${v1}/cms`, paymentsRouter);
 app.use(`${v1}/cms`, userRefreshTokenRouter);
 app.use(`${v1}`, participantsRouter);
+
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'Welcome to api semina',
+  });
+});
 
 app.use(notFoundMiddleware);
 app.use(handleErrorMiddleware);
